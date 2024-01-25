@@ -1,0 +1,81 @@
+class Vehicle:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def start_engine(self):
+        print(f"{self.brand} {self.model}'s engine started.")
+
+    def stop_engine(self):
+        print(f"{self.brand} {self.model}'s engine stopped.")
+
+
+class Motorcycle(Vehicle):
+    def __init__(self, brand, model, num_wheels, has_kick_start):
+        super().__init__(brand, model)
+        self.num_wheels = num_wheels
+        self.has_kick_start = has_kick_start
+
+    def wheelie(self):
+        print(f"{self.brand} {self.model} is doing a wheelie.")
+
+    def start_headlight(self):
+        print(f"{self.brand} {self.model}'s headlight is turned on.")
+
+
+class Bus(Vehicle):
+    def __init__(self, brand, model, num_seats, has_double_decker):
+        super().__init__(brand, model)
+        self.num_seats = num_seats
+        self.has_double_decker = has_double_decker
+
+    def announce_stops(self):
+        print(f"{self.brand} {self.model} is announcing the next stop.")
+
+    def open_doors(self):
+        print(f"{self.brand} {self.model}'s doors are opening.")
+
+
+class Trailer(Vehicle):
+    def __init__(self, brand, model, capacity, is_enclosed):
+        super().__init__(brand, model)
+        self.capacity = capacity
+        self.is_enclosed = is_enclosed
+
+    def load_cargo(self):
+        print(f"{self.brand} {self.model} is loading cargo.")
+
+    def unload_cargo(self):
+        print(f"{self.brand} {self.model} is unloading cargo.")
+
+
+class Boat(Vehicle):
+    def __init__(self, brand, model, length, has_sails):
+        super().__init__(brand, model)
+        self.length = length
+        self.has_sails = has_sails
+
+    def float_on_water(self):
+        print(f"{self.brand} {self.model} is floating on water.")
+
+    def start_motor(self):
+        print(f"{self.brand} {self.model}'s motor started.")
+
+
+# Example Usage
+motorcycle = Motorcycle("Harley", "Davidson", 2, True)
+bus = Bus("Mercedes", "Sprinter", 20, False)
+trailer = Trailer("Utility", "Box", 5000, True)
+boat = Boat("Yamaha", "Exciter", 15, False)
+
+motorcycle.start_engine()
+motorcycle.wheelie()
+
+bus.start_engine()
+bus.announce_stops()
+
+trailer.load_cargo()
+trailer.unload_cargo()
+
+boat.start_engine()
+boat.float_on_water()
