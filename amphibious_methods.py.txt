@@ -1,0 +1,45 @@
+// Interface definition
+interface Amphibious {
+    void dock();
+    void launch();
+}
+
+// Another interface definition (for demonstration purposes)
+interface AirVehicle {
+    void fly();
+}
+
+// Class implementing both Amphibious and AirVehicle interfaces
+class AmphibiousPlane implements Amphibious, AirVehicle {
+    // Implementation of Amphibious interface methods
+    @Override
+    public void dock() {
+        System.out.println("Amphibious Plane is docking.");
+    }
+
+    @Override
+    public void launch() {
+        System.out.println("Amphibious Plane is launching.");
+    }
+
+    // Implementation of AirVehicle interface method
+    @Override
+    public void fly() {
+        System.out.println("Amphibious Plane is flying.");
+    }
+
+    // Additional methods or properties specific to AmphibiousPlane can be added here
+}
+
+// Main class for testing
+public class Main {
+    public static void main(String[] args) {
+        // Creating an instance of AmphibiousPlane
+        AmphibiousPlane amphibiousPlane = new AmphibiousPlane();
+
+        // Calling methods from both interfaces
+        amphibiousPlane.dock();
+        amphibiousPlane.launch();
+        amphibiousPlane.fly();
+    }
+}
