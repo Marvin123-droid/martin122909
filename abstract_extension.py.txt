@@ -1,0 +1,30 @@
+from abc import ABC, abstractmethod
+
+# Abstract class ElectricVehicle
+class ElectricVehicle(ABC):
+
+    @abstractmethod
+    def batteryType(self):
+        pass
+
+# Concrete class ElectricCar extending ElectricVehicle
+class ElectricCar(ElectricVehicle):
+
+    def batteryType(self):
+        return "Lithium-ion battery for Electric Car"
+
+# Concrete class ElectricBike extending ElectricVehicle
+class ElectricBike(ElectricVehicle):
+
+    def batteryType(self):
+        return "NiMH battery for Electric Bike"
+
+# Example usage
+if __name__ == "__main__":
+    # Creating instances of ElectricCar and ElectricBike
+    electric_car = ElectricCar()
+    electric_bike = ElectricBike()
+
+    # Calling the batteryType() method on instances
+    print("Electric Car Battery Type:", electric_car.batteryType())
+    print("Electric Bike Battery Type:", electric_bike.batteryType())
